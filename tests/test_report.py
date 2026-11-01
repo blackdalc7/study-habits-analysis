@@ -14,7 +14,7 @@ def test_main_writes_everything(tmp_path, capsys):
                  "--docs-dir", str(docs)]) == 0
     assert (data / "survey_raw.csv").exists()
     assert (data / "survey_clean.csv").exists()
-    report = (docs / "REPORT.md").read_text()
+    report = (docs / "REPORT.md").read_text(encoding="utf-8")
     assert "## Linear model" in report
     assert "R²" in report
     assert "clean rows   : 150" in capsys.readouterr().out

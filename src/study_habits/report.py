@@ -17,6 +17,7 @@ from study_habits.simulate import make_messy, simulate
 
 
 def build_report(df: pd.DataFrame, log_md: str) -> str:
+    """Build the Markdown report: cleaning log, statistics, group comparisons and the model."""
     fit = analysis.linear_model(df)
     coef = fit.as_series()
     lines = [

@@ -57,6 +57,7 @@ def study_scatter(df: pd.DataFrame, path: Path) -> Path:
 
 
 def sleep_bars(df: pd.DataFrame, path: Path) -> Path:
+    """Bar chart of mean exam score per hours-of-sleep band, highlighting the best band."""
     table = analysis.score_by_sleep(df)
     best = table[table["count"] >= 10]["mean"].idxmax()
     fig, ax = plt.subplots(figsize=(7, 4.2))
@@ -89,6 +90,7 @@ def coffee_curve(df: pd.DataFrame, path: Path) -> Path:
 
 
 def correlation_heatmap(df: pd.DataFrame, path: Path) -> Path:
+    """Heatmap of the correlations between the habits and the exam score."""
     corr = analysis.correlations(df)
     labels = ["study", "sleep", "social media", "coffee", "attendance", "exam score"]
     cmap = LinearSegmentedColormap.from_list("div", [ORANGE, "#f1f0ed", BLUE])

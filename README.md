@@ -1,5 +1,7 @@
 # ☕ Study Habits vs Exam Scores
 
+[![CI](https://github.com/blackdalc7/study-habits-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/blackdalc7/study-habits-analysis/actions/workflows/ci.yml)
+
 A pandas data-cleaning and analysis project. It takes a messy student survey export (inconsistent spellings, units typed into number columns, missing answers, impossible values, duplicate rows), cleans it, and answers a few questions I actually wondered about:
 
 - Does studying more really help, and by how much?

@@ -68,6 +68,7 @@ def job_vs_no_job(df: pd.DataFrame) -> pd.DataFrame:
 
 @dataclass
 class LinearFit:
+    """An ordinary least squares fit of exam score on the study-habit features."""
     names: list[str]
     coefficients: np.ndarray
     intercept: float

@@ -47,6 +47,7 @@ NUMERIC = list(VALID_RANGES)
 
 @dataclass
 class CleaningLog:
+    """Each cleaning step and how many rows or values it changed, for the report."""
     steps: list[tuple[str, int]] = field(default_factory=list)
 
     def add(self, what: str, count: int) -> None:
@@ -87,6 +88,7 @@ def to_number(series: pd.Series) -> pd.Series:
 
 
 def clean(raw: pd.DataFrame) -> tuple[pd.DataFrame, CleaningLog]:
+    """Clean the raw survey export and return the clean frame with a log of every step."""
     log = CleaningLog()
     df = raw.copy()
     log.add("rows in raw export", len(df))
